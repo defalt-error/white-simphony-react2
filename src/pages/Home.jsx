@@ -1,11 +1,21 @@
 // src/pages/Home.jsx
 import React from "react";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { listProducts } from "../data/products";
 
 export default function Home() {
   const { addToCart } = useCart();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const products = listProducts();
+
+  const handleLogout = () => {
+    logout();
+    alert("Sesión cerrada correctamente 👋");
+    navigate("/");
+  };
 
   return (
     <div className="bg-black text-light">
@@ -31,9 +41,36 @@ export default function Home() {
         <p className="fs-5 mb-4">
           Tu tienda de música favorita: vinilos, CDs y cassettes 🎶
         </p>
-        <a href="#productos" className="btn btn-warning btn-lg">
-          Explorar productos
-        </a>
+
+        {/* Si el usuario está logueado */}
+        {user ? (
+          <>
+            <h4 className="mb-3">
+              Hola, {user.name || "Cliente"} 👋
+            </h4>
+            {user.role === "admin" ? (
+              <button
+                className="btn btn-warning btn-lg mb-3"
+                onClick={() => navigate("/admin")}
+              >
+                Ir al panel de administración 👑
+              </button>
+            ) : (
+              <>
+                <a href="#productos" className="btn btn-warning btn-lg mb-3 me-2">
+                  Explorar productos
+                </a>
+                <button className="btn btn-danger btn-lg mb-3" onClick={handleLogout}>
+                  Cerrar sesión
+                </button>
+              </>
+            )}
+          </>
+        ) : (
+          <a href="#productos" className="btn btn-warning btn-lg">
+            Explorar productos
+          </a>
+        )}
       </section>
 
       {/* 🛍️ Listado de productos */}
@@ -56,9 +93,7 @@ export default function Home() {
                 />
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title text-warning">{p.name}</h5>
-                  <p className="card-text mb-3">
-                    ${p.price.toLocaleString()}
-                  </p>
+                  <p className="card-text mb-3">${p.price.toLocaleString()}</p>
                   <button
                     className="btn btn-warning mt-auto"
                     onClick={() => addToCart(p)}
