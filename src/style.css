@@ -1,0 +1,102 @@
+/* --- Estilos base del sitio White Symphony (versión original HTML) --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Header */
+header, .navbar {
+  background-color: #000;
+  color: #fff;
+}
+.navbar a {
+  color: #fff !important;
+}
+.navbar a:hover {
+  color: #ffc107 !important;
+}
+
+/* Hero o banner principal */
+.hero-ws {
+  background-image: url('/imagenes/Discotiendas.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+.hero-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #fff;
+}
+.hero-subtitle {
+  font-size: 18px;
+  color: #ddd;
+}
+
+/* Productos */
+.card {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.card-text {
+  font-size: 14px;
+  color: #ccc;
+}
+.btn-primary {
+  background-color: #ffc107;
+  border: none;
+  color: #000;
+}
+.btn-primary:hover {
+  background-color: #e0a800;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #bbb;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* Secciones (más vendidos, recién llegados) */
+.section-title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Utilidades */
+.container {
+  max-width: 1200px;
+}
+img {
+  max-width: 100%;
+  border-radius: 6px;
+}

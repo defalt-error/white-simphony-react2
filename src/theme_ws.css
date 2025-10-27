@@ -1,0 +1,40 @@
+/* Hero igual al original (sin efectos extra, fondo Discotiendas.jpg) */
+.hero-ws {
+  background-image: url('/imagenes/Discotiendas.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 440px;
+  position: relative;
+}
+.hero-overlay { 
+  color: #fff; 
+  padding: 18px 26px; 
+  border-radius: 10px; 
+  max-width: 860px; 
+  margin: 0 auto; 
+}
+.hero-title { 
+  font-size: 38px; 
+  font-weight: 800; 
+  margin: 0 0 6px 0; 
+}
+.hero-subtitle { 
+  font-size: 18px; 
+  margin: 0; 
+}
+.section-title { 
+  font-weight: 800; 
+  margin-bottom: 16px; 
+}
+.container {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
