@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "karma start karma.conf.cjs"
-
+    "test": "karma start karma.conf.cjs",
+    "push:gh": "node scripts/push.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
@@ -22,6 +22,8 @@
     "@babel/preset-react": "^7.28.5",
     "@vitejs/plugin-react": "^4.3.3",
     "babel-loader": "^9.2.1",
+    "ignore": "^7.0.5",
+    "isomorphic-git": "^1.34.1",
     "jasmine": "^5.12.0",
     "jasmine-core": "^5.12.0",
     "karma": "^6.4.4",
